@@ -1,0 +1,44 @@
+* {
+
+    margin:0;
+    padding:0;
+    box-sizing: border-box; /* All included */
+}
+
+html {
+    font-size: 10px;
+}
+
+/* rem = html ye verilen font buyuklugune gore oransal font buyuklugu ayarlamak */
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    font-size:1.6rem ; /* bunu diyerek body icin 16 px font kullanmis olduk */
+    line-height: 1.5;
+    text-align: center;
+    color: #fff;
+    background-color: #333;
+}
+
+a{
+    text-decoration: none;
+}
+
+p{
+    padding: 1.6rem 0;
+}
+
+/*header*/
+header {
+    height: 45rem; /*450px*/
+    background-color: red;
+}
+
+header .bgImage {
+    background-image:url(assets/ss.png);
+    background-size: cover;
+    background-position: center;
+    height: 45rem;
+    width: 100%;
+
+}
