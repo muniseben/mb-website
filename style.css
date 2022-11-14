@@ -1,26 +1,79 @@
+/*============ IMPORT =============*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap');
+
+/*============ COMMON =============*/
 * {
     margin:0;
     padding:0;
     box-sizing: border-box; /* All included */
 }
+:root {
 
-html {
-    font-size: 7px;
+    font-size: 12px;
+    scroll-behavior: smooth;
+
+/*========= main theme colors ============*/
+
+    --first-color: #0e2431;
+    --second-color: #6a59d1;
+    --third-color: #777;
+
+/*============= hover colors (uzerine gelmek) ============*/
+
+    --hover-color: #614fd0;
+
+/*============= background colors ============*/
+
+    --body-bg-color: #fefefe;
+    --body-bg-color: #fff;
+    --modal-bgcolor:#fff;
+    --bg-transparent-color: rgba(0,0,0,0.1);
+    --transparent-color-01: rgba(0,0,0,0.1);
+    --transparent-color-02: rgba(106,89,209,0.1);
+    --line-color:#d7d7d7;
+
+/*============= color filter ============*/
+
+    --color-filter: invert(1);
+
+/*============= box shadow ============*/
+
+    --box-shadow: 0px 0px 20px rgb(0 0 0 / 10%);
+
+/*============= font size ============*/
+
+    --small-font-size: 0.9em;
+    --normal-font-size:1em;
+
+/*============= scroll bar colors ============*/
+
+    --scroll-bar-color: #c5cadf;
+    --scroll-thumb-color:#70768a;
+    --scroll-thumb-hover-color: #454f6b;
 }
 
+/* :root yerine html de yazabilirdik. */
 /* rem = html ye verilen font buyuklugune gore oransal font buyuklugu ayarlamak */
 
 body{
     font-family: 'Poppins', sans-serif;
-
-    font-size:1.6rem ; /* bunu diyerek body icin 16 px font kullanmis olduk */
-    line-height: 1.5;
-    text-align: center;
-    color: #fff;
-    background-color: #333;
+    /* font-size:1.6rem ; bunu diyerek body icin 16 px font kullanmis olduk */
+    color: var(--first-color);
+    background: var(--body-bg-color);
+    margin: 2rem 0 0 0;
+    transition: .5s ease;
+    /* line-height: 1.5; */
+    /* text-align: center; */
 }
 
+/*============= X ============*/
+
 a{
+    text-decoration: none;
+}
+
+li{
     text-decoration: none;
 }
 
@@ -37,43 +90,315 @@ img {
     content :'';
     display: block;
     clear: both;
-
-
 }
 
-/*header*/
+/*============= Header ============*/
 header {
-    height: 45rem; /*450px*/
-    background-color: red;
-}
-
-header .bgImage {
-    background-image:url(assets/ss.png);
-    background-size: cover;
-    background-position: center;
-    height: 45rem;
+    z-index: 99999;
     width: 100%;
+    position: fixed;
+    top:0;
+    left:0;
+    backdrop-filter: blur(20px);
+    transition: .6s ease;
+}
+/*============= Header Navigation Bar ============*/
+
+.nav-bar{
+    position: relative;
+    height: calc(4rem + 1rem);
+    max-width: 1250px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+    transition: .6s ease;
+}
+
+.nav-bar .logo{
+    color: var(--first-color);
+    font-size: 1.3em;
+    font-weight: 600;
+}
+
+.nav-items a{
+    color: var(--first-color);
+    font-size: var(--normal-font-size);
+    font-weight: 500;
+}
+
+.nav-items a:not(:last-child){ /*pseudo selector :not(:last-child):*/
+    margin-right: 50px;
+}
+
+.nav-items a:hover{
+    color: var(--second-color);
+}
+
+/*=============HOME ============*/
+
+.home{
+
+    position: relative;
+    max-width: 1250px;
+    min-height: 100vh;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 4rem 2rem;
+    flex-direction: column;
+}
+
+.home .home-container{
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.home-container .media-icons {
+
+    display: flex;
+    flex-direction: column;
+    margin-right: 40px;
+}
+
+.home-container .media-icons a{
+
+    color: var(--second-color);
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+.home-container .media-icons a:hover{
+
+    color: var(--hover-color);
+}
+
+.home-container .info h2{
+
+    font-size: 4em;
+    font-weight: 600;
+    line-height: 70px;
+}
+.home-container .info h3{
+    color: var(--third-color);
+    font-feature-settings: 1.3em;
+    font-weight: 600;
+    line-height: 40px;
+}
+
+.home-container .info p{
+
+    color: var(--third-color);
+    font-size: var(--normal-font-size);
+    max-width: 130px;
 
 }
 
-.btn{
+.btn {
 
-    display:inline-block;
-    background: #333;
-    color: #fff;
-    /* border: 1px solid #666; */
-    padding:1.6rem 3.2rem;
-    margin: .5rem 0;
-    transition: all 0.3sn;
-
-
+    background:var(--second-color);
+    color:#fff;
+    font-size: var(--normal-font-size);
+    font-weight: 500;
+    display: inline-block;
+    margin-top: 25px;
+    padding: 20px 30px;
+    letter-spacing: 1px;
+    border-radius: 10px;
 }
-
 .btn:hover{
-    color: rgb(222, 202, 136);
+
+    background: var(--hover-color);
+}
+
+.home-container .home-img{
+
+    position: relative;
+}
+
+.home-container .home-img img{
+
+    width: 90%;
+    transform: translate(0,0);
+}
+
+.home .scroll-down{
+
+    color:var(--first-color);
+    font-size: var(--normal-font-size);
+    font-weight: 500;
+    margin-top: 20px;
 
 }
 
+/* .home .scroll-down i{
+    color:var(--second-color);
+    font-size: 1.2em;
+    animation: arrow-down ease 2s infinite;
+}
+
+@keyframes arrow-down {
+    0%{
+        transform: translateY(0);
+    }
+    30%{
+        transform: translateY(10px);
+    }
+
+} */
+
+/*=============STYLES FOR ALL SECTIONS ============*/
+
+.flex-center{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.section{
+
+    position: relative;
+    width: 1150px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 6rem 2rem 2rem;
+
+}
+
+.sub-section{
+
+    position: relative;
+    width: 1150px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 6rem 0;
+
+}
+
+.section-title-01{
+
+    font-size: 4.5rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    background: linear-gradient(to top, transparent 0%, var(--first-color) 70%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: .1;
+
+}
+
+.section-title-02{
+
+    font-size: 2.5em;
+    font-weight: 700;
+    transform: translateY(-80px) ;
+
+}
+
+/* .section-title-02:before{
+    content: '';
+    position: absolute;
+    width: 70px;
+    height: 5px;
+    right: 0;
+    bottom: 0;
+    background-color: var(--second-color);
+} */
+
+.container {
+
+    position: relative;
+    flex-direction: column;
+
+}
+/*=============About Section ============*/
+
+.about .container .content{
+
+    column-gap: 40px;
+    width: 100%;
+}
+
+.about-img{
+
+    position: relative;
+
+}
+
+.about-img img{
+
+    max-width: 100%;
+    min-width: 500px;
+    border-radius: 10px;
+
+}
+
+.about-info .description{
+
+    max-width: 600px;
+
+}
+
+.about-info .description h3{
+
+    font-size: 2em;
+    font-weight: 600;
+    margin-bottom: 10px;
+
+}
+
+.about-info .description h4{
+
+    font-size: 1.3em;
+    font-weight: 600;
+    margin-bottom: 10px;
+
+}
+
+.about-info .description h4 span{
+
+    color: var(--second-color);
+
+}
+
+.about-info .description p {
+
+    color: var(--third-color);
+    font-size: var(--normal-font-size);
+    margin-bottom: 15px;
+    padding-bottom: 25px;
+
+}
+
+.about-info .professional-list{
+
+    display: flex;
+    column-gap: 30px;
+
+}
+
+.about-info .professional-list .list-item h3{
+
+    font-size: 2.5em;
+    font-weight: 700;
+
+}
+
+.about-info .professional-list .list-item span{
+
+    color: var(--third-color);
+    font-size: var(--small-font-size);
+
+}
+
+
+/*=============A ============*/
 #section-a {
     padding:3rem ; /* her koseden 30px padding verdim*/
 
@@ -93,13 +418,14 @@ header .bgImage {
     padding: 1.5rem;
 }
 
-
+/*=============B ============*/
 #section-b {
     background-color: #eaeaea;
     color: #333;
     padding: 5rem;
 }
 
+/*=============C ============*/
 #section-c .box{
     padding: 5rem;
 }
@@ -108,7 +434,7 @@ header .bgImage {
     background-color: #2690d4;
 
 }
-
+/*=============FOOTER ============*/
 footer {
     padding: 4rem;
     background: #000;
@@ -117,6 +443,7 @@ footer {
 footer a {
     color:#2690d4;
 }
+/*=============RESPONSIVE ============*/
 
 @media screen and (min-width:800px){
 
