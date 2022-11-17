@@ -1,10 +1,26 @@
-//Navigation bar effects on scroll
+var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    slidesPerGroup: 3,
+    loop: true,
+    loopFillGroupWithBlank: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+
+  // Navigation bar effects on scroll
 window.addEventListener("scroll", function(){
     const header = document.querySelector("header");
     header.classList.toogle("sticky", window.scrollY > 0);
 });
 
-//Services section - Modal
+// Services section - Modal
 const serviceModals = document.querySelectorAll(".service-modal");
 const learnmoreBtns = document.querySelectorAll(".learn-more-btn");
 const modalCloseBtns = document.querySelectorAll(".modal-close-btn");
@@ -27,7 +43,7 @@ modalCloseBtns.forEach((modalCloseBtn)=>{
     });
 })
 
-//Portfolio Section - Modal
+// Portfolio Section - Modal
 const portfolioModals = document.querySelectorAll(".portfolio-model");
 const imgCards = document.querySelectorAll(".img-card");
 const portfolioCloseBtns = document.querySelectorAll(".portfolio-close-btn");
@@ -54,8 +70,7 @@ portfolioCloseBtns.forEach((portfolioCloseBtn)=>{
 
 
 
-// ! ogren
-// ? ogrenildi
-//TODO ADSAD
-// * ALKDSLSAKD
-// hjhjhhjhj
+
+
+
+
