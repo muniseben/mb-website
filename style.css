@@ -7,54 +7,52 @@
     margin:0;
     padding:0;
     box-sizing: border-box; /* All included */
+
 }
 :root {
 
     font-size: 12px;
     scroll-behavior: smooth;
 
-/*========= main theme colors ============*/
+/*========= MAIN THEME COLORS ============*/
 
     --first-color: #0e2431;
     --second-color: #6a59d1;
     --third-color: #777;
 
-/*============= hover colors (uzerine gelmek) ============*/
+/*============= HOVER COLORS (uzerine gelmek) ============*/
 
     --hover-color: #614fd0;
 
-/*============= background colors ============*/
+/*============= BACKGROUND COLORS ============*/
 
-    --body-bg-color: #fefefe;
-    --body-bg-color: #fff;
-    --modal-bg-color:#fff;
+    --body-bg-color: #d8dde0;
+    --body-bg-color: #d8dde0;
+    --modal-bg-color:#d8dde0;
     --bg-transparent-color: rgba(0,0,0,0.1);
     --transparent-color-01: rgba(0,0,0,0.1);
     --transparent-color-02: rgba(106,89,209,0.1);
     --line-color:#d7d7d7;
 
-/*============= color filter ============*/
+/*============= COLOR FILTER ============*/
 
     --color-filter: invert(1);
 
-/*============= box shadow ============*/
+/*============= BOX SHADOW ============*/
 
     --box-shadow: 0px 0px 20px rgb(0 0 0 / 10%);
 
-/*============= font size ============*/
+/*============= FONT SIZE ============*/
 
     --small-font-size: 0.9em;
     --normal-font-size:1em;
 
-/*============= scroll bar colors ============*/
+/*============= SCROLL BAR COLORS ============*/
 
     --scroll-bar-color: #c5cadf;
     --scroll-thumb-color:#70768a;
     --scroll-thumb-hover-color: #454f6b;
 }
-
-/* :root yerine html de yazabilirdik. */
-/* rem = html ye verilen font buyuklugune gore oransal font buyuklugu ayarlamak */
 
 body{
     font-family: 'Poppins', sans-serif;
@@ -91,7 +89,7 @@ img {
     display: block;
     clear: both;
 }
-/*============= Scroll Bar  ============*/
+/*============= SCROLL BAR  ============*/
 
 ::-webkit-scrollbar{
     width:10px;
@@ -107,7 +105,7 @@ img {
     background: var(--scroll-thumb-hover-color);
 }
 
-/*============= Header ============*/
+/*============= HEADER ============*/
 header {
     z-index: 99999;
     width: 100%;
@@ -125,7 +123,6 @@ header.sticky{
 
 header.sticky .nav-bar{
     height: calc(2.5rem + 1rem);
-
 }
 /*============= Header Navigation Bar ============*/
 
@@ -141,7 +138,6 @@ header.sticky .nav-bar{
     padding: 0 20px;
     transition: .6s ease;
 }
-
 .nav-bar .logo{
     color: var(--first-color);
     font-size: 1.3em;
@@ -161,9 +157,7 @@ header.sticky .nav-bar{
 .nav-items a:hover{
     color: var(--second-color);
 }
-
-/*=============HOME ============*/
-
+/*============= HOME ============*/
 .home{
 
     position: relative;
@@ -178,8 +172,8 @@ header.sticky .nav-bar{
 .home .home-container{
 
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: center;
     width: 100%;
 }
 
@@ -219,7 +213,8 @@ header.sticky .nav-bar{
 
     color: var(--third-color);
     font-size: var(--normal-font-size);
-    max-width: 130px;
+    max-width: 242px;
+    text-align: center;
 
 }
 
@@ -276,8 +271,7 @@ header.sticky .nav-bar{
 
 } */
 
-/*=============STYLES FOR ALL SECTIONS ============*/
-
+/*============= STYLES FOR ALL SECTIONS ============*/
 .flex-center{
 
     display: flex;
@@ -342,7 +336,7 @@ header.sticky .nav-bar{
     flex-direction: column;
 
 }
-/*=============About Section ============*/
+/*============= ABOUT SECTION ============*/
 
 .about .container .content{
 
@@ -421,7 +415,7 @@ header.sticky .nav-bar{
     font-size: var(--small-font-size);
 }
 
-/*============= Skills Section ============*/
+/*============= SKILLS SECTION ============*/
 
 .skills .container .content{
     width: 100%;
@@ -582,7 +576,7 @@ header.sticky .nav-bar{
     transform: scale(1.03);
 }
 
-/*============= Services Section ============*/
+/*============= SERVICES SECTION ============*/
 
 .services .container .content{
     width: 100%;
@@ -692,7 +686,7 @@ header.sticky .nav-bar{
     color: var(--second-color);
 }
 
-/*============= Portfolio Section ============*/
+/*============= PORTFOLIO SECTION ============*/
 
 .portfolio .container .content{
     width: 100%;
@@ -759,53 +753,204 @@ header.sticky .nav-bar{
     object-fit: cover;
 }
 
-
-/*=============A ============*/
-#section-a {
-    padding:3rem ; /* her koseden 30px padding verdim*/
-
+.portfolio-model{
+    z-index: 999999;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: var(--transparent-color-01);
+    backdrop-filter: blur(20px);
+    visibility: hidden;
+    opacity: 0;
+    transition:.3s ease;
 }
 
-#section-a ul{
-    list-style: none;
+.portfolio-model.active{
+    visibility: visible;
+    opacity: 1;
 }
 
-#section-a li{
-    background: #fff;
-    color: #333;
-    margin-bottom: 2rem;
+.portfolio-model-body{
+    position: relative;
+    background: var(--modal-bg-color);
+    max-width: 600px;
+    margin: 20px;
+    padding:40px;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
 }
 
-.col-content {
-    padding: 1.5rem;
+.portfolio-model.active .portfolio-model-body{
+    transform: translateY(0);
 }
 
-/*=============B ============*/
-#section-b {
-    background-color: #eaeaea;
-    color: #333;
-    padding: 5rem;
+.portfolio-close-btn{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    margin: 20px;
+    cursor: pointer;
 }
 
-/*=============C ============*/
-#section-c .box{
-    padding: 5rem;
+.portfolio-model-body h3{
+    font-size: 1.5em;
 }
 
-#section-c .box:first-child {
-    background-color: #2690d4;
-
+.portfolio-model-body img{
+    width: 100%;
+    margin: 20px 0 ;
+    border-radius: 10px;
 }
-/*=============FOOTER ============*/
+/*============= CONTACT SECTION ============*/
+
+.contact .container .content{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.contact-left h2{
+    font-size: 2.1em;
+    font-weight: 800;
+    margin-bottom: 40px;
+}
+
+.contact-list li{
+    margin-bottom: 40px;
+}
+
+.contact-list li h3{
+    font-size: 1.3em;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.contact-list li h3 i{
+    color: var(--second-color);
+    font-size: 1.3em;
+    margin-right: 10px;
+}
+
+.contact-list li span{
+    color: var(--third-color);
+    margin-left: 40px;
+}
+
+.contact-list li span a{
+    color: var(--third-color);
+}
+
+.contact-right p{
+    color: var(--third-color);
+    font-size: 1.6em;
+    margin-bottom: 30px;
+}
+
+.contact-right p span{
+    color: var(--first-color);
+    font-weight: 700;
+}
+
+.contact-form input, .contact-form textarea {
+    border: none;
+    color: var(--first-color);
+    background: var(--transparent-color-02);
+    font-size: var(--normal-font-size);
+    margin-bottom: 20px;
+    padding: 15px 40px 40px 20px;
+    border-radius: 5px;
+}
+
+.contact-form textarea{
+    width: 100%;
+    resize: none;
+}
+
+::placeholder{
+    color: var(--first-color);
+}
+
+.contact-form .first-row input{
+    width: 100%;
+}
+
+.contact-form .second-row{
+    display:flex;
+    justify-content: space-between;
+}
+
+.contact-form .second-row input{
+    width: 48%;
+}
+
+.contact-form .btn{
+    border: none;
+    margin-top: 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/*============= GET IN TOUCH ============*/
+
+/*
+.get-in-touch{
+    margin-top: 70px;
+}
+
+.get-in-touch .container .content{
+    width: 100%;
+}
+
+.get-in-touch .contact-card{
+    position: relative;
+    width: 90%;
+    background: var(--card-bg-color);
+    box-shadow: var(--box-shadow);
+    padding: 50px;
+    border-radius: 10px;
+    column-gap: 50px;
+}
+
+.contact-card .title{
+    text-transform: uppercase;
+    line-height: 60px;
+}
+
+.contact-card .title h4{
+    font-size: 1.2em;
+    font-weight: 300;
+    line-height: 20px;
+}
+
+.contact-card .title h3{
+    font-size: 2.3em;
+    font-weight: 400;
+}
+
+.contact-card .title h2{
+    font-size: 4.2em;
+    font-weight: 700;
+    background: linear-gradient(to top,transparent 0%, var(--first-color) 30%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: .9;
+
+/*============= FOOTER ============*/
+
 footer {
-    padding: 4rem;
-    background: #000;
+    font-size: var(--normal-font-size);
+    padding: 3rem;
+    background: rgb(59, 58, 58);
+    font-weight: 500;
+    color:#fff;
+    text-align: center;
 }
 
 footer a {
     color:#2690d4;
 }
-/*=============RESPONSIVE ============*/
+/*============= RESPONSIVE ============*/
 
 @media screen and (min-width:800px){
 
