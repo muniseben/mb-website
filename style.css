@@ -11,17 +11,24 @@
     box-sizing: border-box; /* All included */
 
 }
+
+html{
+    scroll-behavior: smooth;
+}
+
 :root {
 /* notes 5 */
     font-size: 13px;
-    scroll-behavior: smooth;
+
 
 /*========= MAIN THEME COLORS ============*/
 /* notes 6 */
     --first-color: #0e2431;
-    --second-color: #77a6b6;
+    --second-color: #c5726d;
     --third-color: #6d7275;
-
+    /* ebd478 sari
+    #487a6e ysil
+    77a6b6 mavili*/
 /*============= HOVER COLORS (uzerine gelmek) ============*/
 
     --hover-color: #d5896f;
@@ -74,7 +81,7 @@ a{
 }
 
 li{
-    text-decoration: none;
+    list-style: none;
 }
 
 p{
@@ -91,9 +98,93 @@ img {
     display: block;
     clear: both;
 }
+
+
+.fa-medium{
+    z-index: 999999;
+    padding: 16px;
+    position: fixed;
+    right: 0;
+    bottom: 215px;
+    width: 45px;
+    height: 45px;
+    background: var(--third-color);
+    color:#fff;
+    font-size: var(--small-font-size);
+    border-radius: 3px;
+    cursor: pointer;
+    opacity: 100%;
+    transition: .5s ease;
+    right: 20px;
+    pointer-events: all;
+
+}
+
+.fa-github {
+    z-index: 999999;
+    padding: 16px;
+    position: fixed;
+    right: 0;
+    bottom: 150px;
+    width: 45px;
+    height: 45px;
+    background: var(--third-color);
+    color:#fff;
+    font-size: var(--small-font-size);
+    border-radius: 3px;
+    cursor: pointer;
+    opacity: 100%;
+    transition: .5s ease;
+    right: 20px;
+    pointer-events: all;
+
+}
+.fa-linkedin-in {
+    z-index: 999999;
+    padding: 16px;
+    position: fixed;
+    right: 0;
+    bottom: 85px;
+    width: 45px;
+    height: 45px;
+    background: var(--third-color);
+    color:#fff;
+    font-size: var(--small-font-size);
+    border-radius: 3px;
+    cursor: pointer;
+    opacity: 100%;
+    transition: .5s ease;
+    right: 20px;
+    pointer-events: all;
+
+}
+
+.scrollToTop-btn{
+    z-index: 999999;
+    position: fixed;
+    right: 0;
+    bottom: 20px;
+    width: 45px;
+    height: 45px;
+    background: var(--second-color);
+    color:#fff;
+    font-size: var(--small-font-size);
+    border-radius: 3px;
+    cursor: pointer;
+    opacity: 0%;
+    transition: .5s ease;
+}
+
+.scrollToTop-btn.active{
+    right: 20px;
+    pointer-events: all;
+    opacity: 1;
+
+}
+
 /*============= SCROLL BAR  ============*/
 
-::-webkit-scrollbar{
+/* ::-webkit-scrollbar{
     width:10px;
     background: var(--scroll-bar-color);
 }
@@ -105,7 +196,7 @@ img {
 
 ::-webkit-scrollbar-thumb:hover{
     background: var(--scroll-thumb-hover-color);
-}
+} */
 
 /*============= HEADER ============*/
 header {
@@ -158,6 +249,10 @@ header.sticky .nav-bar{
 
 .nav-items a:hover{
     color: var(--second-color);
+}
+
+.nav-menu-btn{
+    display:none;
 }
 /*============= HOME ============*/
 .home{
@@ -431,13 +526,11 @@ header.sticky .nav-bar{
 .skills-description{
     max-width: 700px;
     margin-bottom:50px;
-
 }
 
 
 .skills-description p{
     color: var(--third-color);
-
 }
 
 .skills-description h3{
@@ -741,9 +834,9 @@ header.sticky .nav-bar{
 
 .portfolio-list{
     display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px,1fr)); /* ogren */
     max-width: 100%;
-    gap: 35px;
+    gap: 35px;  /* ogren */
     margin:0 auto;
 }
 
@@ -818,7 +911,6 @@ header.sticky .nav-bar{
     visibility: visible;
     opacity: 1;
 }
-
 .portfolio-model-body{
     position: relative;
     background: var(--modal-bg-color);
@@ -827,10 +919,13 @@ header.sticky .nav-bar{
     padding:40px;
     border-radius: 10px;
     box-shadow: var(--box-shadow);
+    transform: translateY(-50px);
+    transition: .5s ease;
+
 }
 
 .portfolio-model.active .portfolio-model-body{
-    transform: translateY(0);
+    /* transform: translateY(0); */
 }
 
 .portfolio-close-btn{
@@ -850,6 +945,15 @@ header.sticky .nav-bar{
     margin: 20px 0 ;
     border-radius: 10px;
 }
+
+
+
+
+
+
+
+
+
 
 /*============= ILLUSTRATION ============*/
 
@@ -1015,6 +1119,7 @@ section .card .image img{
 /*============= FOOTER ============*/
 
 footer {
+    padding:2px;
     font-size: var(--normal-font-size);
     background: var(--second-color);
     font-weight: 500;
@@ -1024,20 +1129,63 @@ footer {
 
 /*============= RESPONSIVE ============*/
 
-@media screen and (min-width:800px){
+@media screen and (max-width:1070px){
 
-    #section-a li {
-        width:28%;
-        margin:1%;
-        display: inline-block;
-    }
+.navigation{
+    position:fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--transparent-color-01);
+}
 
-    .box {
-        width: 50%;
-        float:left;
-    }
+.nav-items{
+    position: relative;
+    background: var(--modal-bg-color);
+    width: 600px;
+    max-width: 600px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+}
 
-    html {
-        font-size: 9px;
-    }
+.nav-items a{
+    margin:15px 50px;
+}
+
+.nav-close-btn{
+    position: absolute;
+    background: url(https://icons8.com/icon/18314/no-sugar)no-repeat;
+    filter:var(--color-filter);
+    background-size: 12px;
+    background-position: center;
+    width: 40px;
+    height: 40px;
+    top: 0;
+    right: 0;
+    margin:10px;
+    cursor:pointer;
+}
+
+.nav-menu-btn{
+    background: url(../assets/bars.png)no-repeat;
+    filter: var(--color-filter);
+    background-size:30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display:block;
+}
+
+
 }
