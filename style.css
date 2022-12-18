@@ -418,8 +418,8 @@ header.sticky .nav-bar {
 }
 
 .about-img img {
-    max-width: 100%;
-    min-width: 500px;
+    max-width: 60%;
+    min-width: 300px;
     border-radius: 10px;
 }
 

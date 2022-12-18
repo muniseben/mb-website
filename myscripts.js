@@ -85,16 +85,16 @@ ScrollReveal({
 });
 
 //!target elements, and specify options to create reveal animations
-ScrollReveal().reveal(".home .info h2, .section-title-01, .section-title-02", { delay: 150, origin: "left" });
-ScrollReveal().reveal(".home .info h3, .home .info p, about-info btn", { delay: 150, origin: "right" });
-ScrollReveal().reveal(".home .info .btn", { delay: 150, origin: "bottom" });
-ScrollReveal().reveal(".media-icons i, .contact-left li ", { delay: 150, origin: "left", interval: 150 });
-ScrollReveal().reveal(".home-img, .about.img", { delay: 150, origin: "bottom" });
-ScrollReveal().reveal(".about .description, .contact-right", { delay: 150, origin: "right" });
-ScrollReveal().reveal(".about .professional-list li", { delay: 150, origin: "right", interval: 150 });
-ScrollReveal().reveal(".skills-description, .services-description, .contact-card, .client-swiper, .contact-left h2", { delay: 150, origin: "left" });
-ScrollReveal().reveal(".experience-card, .service-card, .education, .portfolio .img-card", { delay: 150, origin: "right", interval: 150 });
-ScrollReveal().reveal(".footer, .group", { delay: 150, origin: "top", interval: 150 });
+ScrollReveal().reveal(".home .info h2, .section-title-01, .section-title-02", { delay: 80, origin: "left" });
+ScrollReveal().reveal(".home .info h3, .home .info p, .about-info ", { delay: 80, origin: "right" });
+ScrollReveal().reveal(".home .info .btn", { delay: 80, origin: "bottom" });
+ScrollReveal().reveal(".media-icons i, .contact-left li ", { delay: 80, origin: "left", interval: 80 });
+ScrollReveal().reveal(".home-img, .about-img", { delay: 80, origin: "left" });
+ScrollReveal().reveal(".about .description , .contact-right", { delay: 80, origin: "right" });
+ScrollReveal().reveal(".about .professional-list li", { delay: 80, origin: "right", interval: 80 });
+ScrollReveal().reveal(".skills-description, .services-description, .contact-card, .client-swiper, .contact-left h2", { delay: 80, origin: "left" });
+ScrollReveal().reveal(".experience-card, .service-card, .education, .portfolio .img-card", { delay: 80, origin: "right", interval: 80 });
+ScrollReveal().reveal(".footer, .group", { delay: 80, origin: "top", interval: 80 });
 
 // Navigation bar effects on scroll
 // window.addEventListener("scroll", function(){
