@@ -874,9 +874,9 @@ header.sticky .nav-bar {
     transition: 0.5s ease;
 }
 
-.portfolio-model.active .portfolio-model-body {
-    /* transform: translateY(0); */
-}
+/* .portfolio-model.active .portfolio-model-body { */
+/* transform: translateY(0); */
+/* } */
 
 .portfolio-close-btn {
     position: absolute;
