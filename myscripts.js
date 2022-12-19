@@ -92,8 +92,15 @@ ScrollReveal().reveal(".media-icons i, .contact-left li ", { delay: 80, origin: 
 ScrollReveal().reveal(".home-img, .about-img", { delay: 80, origin: "left" });
 ScrollReveal().reveal(".about .description , .contact-right", { delay: 80, origin: "right" });
 ScrollReveal().reveal(".about .professional-list li", { delay: 80, origin: "right", interval: 80 });
-ScrollReveal().reveal(".skills-description, .services-description, .contact-card, .client-swiper, .contact-left h2", { delay: 80, origin: "left" });
-ScrollReveal().reveal(".experience-card, .service-card, .education, .portfolio .img-card", { delay: 80, origin: "right", interval: 80 });
+ScrollReveal().reveal(".skills-description, .services-description, .contact-card, .contact-left h2", {
+    delay: 80,
+    origin: "left",
+});
+ScrollReveal().reveal(".experience-card, .service-card, .education, .portfolio .img-card", {
+    delay: 80,
+    origin: "right",
+    interval: 80,
+});
 ScrollReveal().reveal(".footer, .group", { delay: 80, origin: "top", interval: 80 });
 
 // Navigation bar effects on scroll

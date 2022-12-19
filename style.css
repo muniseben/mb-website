@@ -592,15 +592,15 @@ header.sticky .nav-bar {
 }
 
 .bar .javascript:before {
-    width: 85%;
+    width: 70%;
 }
 
-.bar .jquery:before {
-    width: 75%;
+.bar .nodejs:before {
+    width: 50%;
 }
 
-.bar .php:before {
-    width: 95%;
+.bar .postgres:before {
+    width: 50%;
 }
 
 .bar .illustrator:before {
