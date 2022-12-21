@@ -192,6 +192,7 @@ img {
 } */
 
 /*============= HEADER ============*/
+
 header {
     z-index: 99999;
     width: 100%;
@@ -210,7 +211,7 @@ header.sticky {
 header.sticky .nav-bar {
     height: calc(2.5rem + 1rem);
 }
-/*============= Header Navigation Bar ============*/
+/*============= HEADER NAVIGATION BAR ============*/
 
 .nav-bar {
     position: relative;
@@ -231,7 +232,7 @@ header.sticky .nav-bar {
 }
 
 .nav-items a {
-    color: var(--first-color);
+    color: var(--third-color);
     font-size: var(--normal-font-size);
     font-weight: 500;
 }
@@ -266,11 +267,10 @@ header.sticky .nav-bar {
     width: 100%;
 }
 
-.media-icons {
+/* .media-icons {
     display: flex;
     /* flex-direction: column; */
-    margin-right: 140px;
-}
+/* margin-right: 140px; */
 
 .media-icons a {
     color: var(--second-color);
@@ -283,11 +283,6 @@ header.sticky .nav-bar {
     color: var(--hover-color);
 }
 
-.home-container .info h2 {
-    font-size: 4em;
-    font-weight: 600;
-    line-height: 70px;
-}
 .home-container .info h3 {
     color: var(--third-color);
     font-feature-settings: 1.3em;
@@ -296,6 +291,7 @@ header.sticky .nav-bar {
 }
 
 .home-container .info p {
+    margin: 0px; /*! ortalamak icin 9px eklemem gerekti, ama bu sefer tel ekraninda bozuk gozukuyordu !*/
     color: var(--third-color);
     font-size: var(--normal-font-size);
     max-width: 242px;
@@ -309,7 +305,8 @@ header.sticky .nav-bar {
     font-weight: 500;
     display: inline-block;
     margin-top: 25px;
-    padding: 20px 152px;
+    padding: 2px 105px;
+    /* padding: 20px 152px; | bu eski versiyondu, bunu degistirdim.*/
     letter-spacing: 1px;
     border-radius: 10px;
 }
@@ -350,6 +347,7 @@ header.sticky .nav-bar {
 } */
 
 /*============= STYLES FOR ALL SECTIONS ============*/
+
 .flex-center {
     /* notes 7 */
 
@@ -375,7 +373,6 @@ header.sticky .nav-bar {
 }
 
 .section-title-01 {
-    /* notes 9-10 */
     font-size: 4.5rem;
     font-weight: 800;
     margin-bottom: 2rem;
@@ -389,7 +386,6 @@ header.sticky .nav-bar {
     font-size: 2.5em;
     font-weight: 700;
     transform: translateY(-80px);
-    /* notes 8 */
 }
 
 /* .section-title-02:before{
@@ -409,7 +405,7 @@ header.sticky .nav-bar {
 /*============= ABOUT SECTION ============*/
 
 .about .container .content {
-    column-gap: 40px;
+    /* column-gap: 40px; */
     width: 100%;
 }
 
@@ -418,13 +414,13 @@ header.sticky .nav-bar {
 }
 
 .about-img img {
-    max-width: 60%;
+    max-width: 50%;
     min-width: 300px;
     border-radius: 10px;
 }
 
 .about-info .description {
-    max-width: 600px;
+    max-width: 1050px;
 }
 
 .about-info .description h3 {
@@ -650,7 +646,7 @@ header.sticky .nav-bar {
     font-style: italic;
 }
 
-.experience-card span {
+.experience-card p {
     color: var(--third-color);
 }
 
@@ -855,20 +851,22 @@ section .card .image img {
 .swiper-button-next,
 .swiper-button-prev {
     opacity: 0.7;
-    color: #749775;
+    color: #749775; /*! Buradaki rengi gormuyor !*/
     transition: all 0.3s ease;
 }
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
+    color: #749775; /*! Buradaki rengi gormuyor !*/
     opacity: 1;
-    color: #082075;
 }
 
 /*============= CONTACT SECTION ============*/
+
 .contact .container .content {
     display: flex;
     justify-content: center;
     width: 100%;
+    color: var(--third-color);
 }
 
 .contact-list li {
@@ -894,12 +892,6 @@ section .card .image img {
 
 .contact-list li span a {
     color: var(--third-color);
-}
-
-.contact-right p {
-    color: var(--third-color);
-    font-size: 1.6em;
-    margin-bottom: 30px;
 }
 
 .contact-right p span {

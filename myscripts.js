@@ -1,3 +1,44 @@
+//////////////////////////////* SCROLL TO TOP BUTTON ////////////////////////////////////////
+
+const scrollTopButton = document.querySelector(".scrollToTop-btn");
+
+window.addEventListener("scroll", function () {
+    scrollTopButton.classList.toggle("active", window.scrollY > 500);
+});
+
+scrollTopButton.addEventListener("click", () => {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+});
+
+//////////////////////////////* PORTFOLIO SECTION OPEN AND CLOSE ////////////////////////////////////////
+
+//! Portfolio Section - dokumanimizdan 3 adet element sectik
+const portfolioModels = document.querySelectorAll(".portfolio-model");
+const imgCards = document.querySelectorAll(".img-card");
+const portfolioCloseBtns = document.querySelectorAll(".portfolio-close-btn");
+
+//! portfolioIn fonks olusturdum. tiklandiginda imgCard elementine active class'ini ekliyor ve boylece gorunur oluyor.
+var portfolioIn = function (index) {
+    portfolioModels[index].classList.add("active");
+};
+//! forEach(1value, 2index, 3array)metodu kullanar eslesme yaptik.
+imgCards.forEach((imgCard, i) => {
+    // imgCards[i]=imgCard - bu ikisi de ayni anlma gelir.
+    imgCard.addEventListener("click", () => {
+        portfolioIn(i);
+    });
+});
+
+portfolioCloseBtns.forEach((portfolioCloseBtn) => {
+    portfolioCloseBtn.addEventListener("click", () => {
+        portfolioModels.forEach((portfolioModalView) => {
+            portfolioModalView.classList.remove("active");
+        });
+    });
+});
+
+//////////////////////////////* SWIPER FOR ILLUSTRATIONS ////////////////////////////////////////
 var swiper = new Swiper(".mySwiper", {
     slidesPerView: 3,
     spaceBetween: 30,
@@ -15,47 +56,8 @@ var swiper = new Swiper(".mySwiper", {
     },
 });
 
-//! Scroll to top button
-const scrollTopButton = document.querySelector(".scrollToTop-btn");
+//////////////////////////////////////* RESPONSIVE NAVIGATION MENU TOGGLE ///////////////////////////////////////
 
-window.addEventListener("scroll", function () {
-    scrollTopButton.classList.toggle("active", window.scrollY > 500);
-});
-
-scrollTopButton.addEventListener("click", () => {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-});
-
-//! add scroll and online
-
-//! Portfolio Section - dokumanimizdan 3 adet element sectik
-const portfolioModels = document.querySelectorAll(".portfolio-model");
-const imgCards = document.querySelectorAll(".img-card");
-const portfolioCloseBtns = document.querySelectorAll(".portfolio-close-btn");
-
-//! portfolioIn fonks olusturdum. tiklandiginda imgCard elementine active class'ini ekliyor. boylece gorunur oluyor.
-var portfolioIn = function (index) {
-    portfolioModels[index].classList.add("active");
-};
-
-//! forEach(1value, 2index, 3array)metodu kullanar eslesme yaptik.
-imgCards.forEach((imgCard, i) => {
-    // imgCards[i]=imgCard - bu ikisi de ayni anlma gelir.
-    imgCard.addEventListener("click", () => {
-        portfolioIn(i);
-    });
-});
-
-portfolioCloseBtns.forEach((portfolioCloseBtn) => {
-    portfolioCloseBtn.addEventListener("click", () => {
-        portfolioModels.forEach((portfolioModalView) => {
-            portfolioModalView.classList.remove("active");
-        });
-    });
-});
-
-//! Responsive navigation menu toggle
 const menuBtn = document.querySelector(".nav-menu-btn");
 const closeBtn = document.querySelector(".nav-close-btn");
 const navigation = document.querySelector(".navigation");
@@ -75,7 +77,8 @@ navItems.forEach((navItem) => {
     });
 });
 
-//! Scroll reveal animations
+////////////////////////////////////////* SCROLL REVEAL ANIMATIONS WITH "UNPKG" LIBRARY ///////////////////////////////////////
+
 //!common reveal options to create reveal animations
 ScrollReveal({
     reset: true,
