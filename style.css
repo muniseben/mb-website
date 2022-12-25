@@ -15,6 +15,8 @@ html {
     scroll-behavior: smooth;
 }
 
+/*! PSEUDO CLASS !*/
+
 :root {
     /* notes 5 */
     font-size: 13px;
@@ -1112,6 +1114,11 @@ footer {
         font-size: 2em;
         transform: translateY(-65px);
     }
+
+    .about-img {
+        width: 70%;
+    }
+
     /*============= home section ============*/
     .home .home-container {
         display: grid;
