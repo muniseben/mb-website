@@ -800,10 +800,13 @@ header.sticky .nav-bar {
 }
 
 .swiper {
-    width: 1000px;
+    max-width: 1000px;
     position: relative;
     border-radius: 20px;
     box-shadow: var(--box-shadow);
+}
+
+.swiper-slide {
 }
 
 .card::before {
@@ -1152,5 +1155,10 @@ footer {
 
     .contact-card .contact-btn .btn {
         font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .content {
     }
 }

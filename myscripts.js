@@ -39,15 +39,33 @@ portfolioCloseBtns.forEach((portfolioCloseBtn) => {
 });
 
 //////////////////////////////* SWIPER FOR ILLUSTRATIONS ////////////////////////////////////////
-var swiper = new Swiper(".mySwiper", {
-    slidesPerView: 3,
-    spaceBetween: 30,
-    slidesPerGroup: 3,
+var swiper = new Swiper(".swiper", {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    slidesPerGroup: 1,
     loop: true,
-    loopFillGroupWithBlank: true,
+    loopFillGroupWithBlank: false,
     pagination: {
         el: ".swiper-pagination",
         clickable: true,
+    },
+
+    breakpoints: {
+        // when window width is >= 400px
+        400: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+        },
+        // when window width is >= 730px
+        730: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+        },
+        // when window width is >= 1070px
+        1070: {
+            slidesPerView: 4,
+            spaceBetween: 40,
+        },
     },
 
     navigation: {
