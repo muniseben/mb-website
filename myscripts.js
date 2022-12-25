@@ -42,32 +42,17 @@ portfolioCloseBtns.forEach((portfolioCloseBtn) => {
 var swiper = new Swiper(".swiper", {
     slidesPerView: 1,
     spaceBetween: 10,
-    slidesPerGroup: 1,
     loop: true,
-    loopFillGroupWithBlank: false,
+    breakpoints: {
+        // when window width is <= 730px
+        730: {
+            slidesPerView: 3,
+        },
+    },
     pagination: {
         el: ".swiper-pagination",
         clickable: true,
     },
-
-    breakpoints: {
-        // when window width is >= 400px
-        400: {
-            slidesPerView: 2,
-            spaceBetween: 20,
-        },
-        // when window width is >= 730px
-        730: {
-            slidesPerView: 3,
-            spaceBetween: 30,
-        },
-        // when window width is >= 1070px
-        1070: {
-            slidesPerView: 4,
-            spaceBetween: 40,
-        },
-    },
-
     navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
@@ -98,12 +83,12 @@ navItems.forEach((navItem) => {
 ////////////////////////////////////////* SCROLL REVEAL ANIMATIONS WITH "UNPKG" LIBRARY ///////////////////////////////////////
 
 //!common reveal options to create reveal animations
-ScrollReveal({
-    reset: true,
-    distance: "60px",
-    duration: 2500,
-    delay: 100,
-});
+// ScrollReveal({
+//     reset: true,
+//     distance: "60px",
+//     duration: 2500,
+//     delay: 100,
+// });
 
 //!target elements, and specify options to create reveal animations
 ScrollReveal().reveal(".home .info h2, .section-title-01, .section-title-02", { delay: 80, origin: "left" });
