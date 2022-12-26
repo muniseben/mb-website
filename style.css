@@ -896,11 +896,6 @@ section .card .image img {
     color: var(--third-color);
 }
 
-.contact-right p span {
-    color: var(--first-color);
-    font-weight: 700;
-}
-
 .contact-form input,
 .contact-form textarea {
     border: none;
