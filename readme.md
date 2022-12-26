@@ -10,13 +10,13 @@ I am an Adobe fan and have been using the Adobe Portfolio to build and maintain 
 
 <br>
 
-![alt text for screen readers](/assets/munise_web.png "Text to show on mouseover")
+![alt text for screen readers](assets/munise_web.png "Text to show on mouseover")
 
 > ## Document Object Model I have prepared
 
 <br>
 
-![alt text for screen readers](/assets/mb_website_map.png "Text to show on mouseover")
+![alt text for screen readers](assets/mb_website_map.png "Text to show on mouseover")
 
 <br>
 
@@ -24,4 +24,4 @@ I am an Adobe fan and have been using the Adobe Portfolio to build and maintain 
 
 <br>
 
-![alt text for screen readers](/assets/adobe_web.png "Text to show on mouseover")
+![alt text for screen readers](assets/adobe_web.png "Text to show on mouseover")
